@@ -1,69 +1,89 @@
 <template>
   <!-- CTA Section -->
-  <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-white mb-4">
-        立即体验达梦数据全栈产品
-      </h2>
-      <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-        达梦数据作为国产数据库领军者，提供从单机到分布式，从交易到分析的全栈数据库产品及解决方案
-      </p>
-      <n-button size="large" secondary class="rounded-lg px-8">
-        下载中心
-      </n-button>
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold text-blue-600">
+          立即体验达梦数据全栈产品
+        </h2>
+        <button
+          class="px-8 py-3 bg-red-600 text-white font-medium rounded hover:bg-red-700 transition-colors"
+        >
+          下载中心
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-12">
+  <footer class="bg-white py-12 border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
         <!-- Company Info -->
         <div>
-          <h3 class="text-white font-semibold text-lg mb-4">达梦数据</h3>
-          <p class="text-sm leading-relaxed mb-4">
-            达梦数据是国产数据库领域的领军企业，新宗旨推进数据库国产化替代，为客户提供高性能、高可用的数据库产品及服务，
-            满足金融、政府、电信、能源等多个行业需求。
+          <h3 class="text-gray-900 font-bold text-base mb-4">达梦数据</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">
+            达梦数据作为国内领先的数据库产品开发服务商，国内数据库基础软件产品、发展的关键提出解决，为客户提供高最终最全生命周期的产品与解决方案。多年来，公司坚持自主创新，独立研发的技术体系，核心代码自主研发创造，高达100%，构建了中国数据库的代码墙。
           </p>
           <!-- Social Icons -->
           <div class="flex gap-3">
             <a
               href="#"
-              class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
                 />
               </svg>
             </a>
             <a
               href="#"
-              class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"
                 />
               </svg>
             </a>
             <a
               href="#"
-              class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"
                 />
               </svg>
             </a>
             <a
               href="#"
-              class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm-1-8c-.7 0-1.3-.6-1.3-1.3S7.3 6.4 8 6.4s1.3.6 1.3 1.3S8.7 9 8 9zm9 8h-2v-3.5c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5V17h-2v-7h2v1c.5-.8 1.4-1.3 2.5-1.3 1.9 0 3.5 1.6 3.5 3.5V17z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
                 />
               </svg>
             </a>
@@ -72,21 +92,21 @@
 
         <!-- About Us -->
         <div>
-          <h3 class="text-white font-semibold mb-4">关于我们</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-gray-900 font-bold text-base mb-4">关于我们</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
             <li>
-              <a href="#" class="hover:text-white transition-colors"
-                >公司简介</a
+              <a href="#" class="hover:text-gray-900 transition-colors"
+                >达梦新闻</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-white transition-colors"
-                >公司资讯</a
+              <a href="#" class="hover:text-gray-900 transition-colors"
+                >公司介绍</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-white transition-colors"
-                >荣誉资质</a
+              <a href="#" class="hover:text-gray-900 transition-colors"
+                >发展历程</a
               >
             </li>
           </ul>
@@ -94,21 +114,16 @@
 
         <!-- Resources -->
         <div>
-          <h3 class="text-white font-semibold mb-4">资源中心</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-gray-900 font-bold text-base mb-4">资源中心</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
             <li>
-              <a href="#" class="hover:text-white transition-colors"
+              <a href="#" class="hover:text-gray-900 transition-colors"
                 >下载中心</a
               >
             </li>
             <li>
-              <a href="#" class="hover:text-white transition-colors"
+              <a href="#" class="hover:text-gray-900 transition-colors"
                 >服务与支持</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-white transition-colors"
-                >在线文档</a
               >
             </li>
           </ul>
@@ -116,8 +131,8 @@
 
         <!-- Contact -->
         <div>
-          <h3 class="text-white font-semibold mb-4">联系我们</h3>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-gray-900 font-bold text-base mb-4">联系我们</h3>
+          <ul class="space-y-3 text-sm text-gray-600">
             <li class="flex items-center gap-2">
               <svg
                 class="w-4 h-4"
@@ -152,7 +167,7 @@
             </li>
             <li class="flex items-start gap-2">
               <svg
-                class="w-4 h-4 mt-0.5"
+                class="w-4 h-4 mt-0.5 shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -161,32 +176,29 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              湖北省武汉市东湖开发区
+              2025年10月达孝技术团队
             </li>
           </ul>
         </div>
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-8 border-t border-gray-800 text-sm text-center">
-        <p>
-          鄂ICP备05017075号-1 | Copyright ©2023-武汉达梦数据库股份有限公司 |
-          网络许可证 | 隐私政策声明
-        </p>
+      <div class="pt-6 border-t border-gray-200">
+        <div class="text-xs text-gray-500 text-center space-y-1">
+          <p>
+            地址：中国·京·东湖新技术开发区高新大道999号未来科技大厦C3栋16-19层
+          </p>
+          <p>
+            鄂公网安备 4201850200109号 | Copyright ©2024
+            武汉达梦数据库股份有限公司 | 用户协议 | 隐私保护声明
+          </p>
+        </div>
       </div>
     </div>
   </footer>
 </template>
 
-<script setup>
-import { NButton } from "naive-ui";
-</script>
+<script setup></script>
