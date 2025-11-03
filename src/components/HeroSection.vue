@@ -14,12 +14,13 @@
           <!-- Search Box -->
           <div class="w-[660px]">
             <n-input-group>
-              <n-input placeholder="请输入..." size="large">
-                <template #prefix>
-                  <Search class="w-5 h-5 text-gray-400" />
+              <n-input placeholder="请输入..." size="large"> </n-input>
+              <n-button type="primary" size="large">
+                <template #icon>
+                  <Search class="w-5 h-5" />
                 </template>
-              </n-input>
-              <n-button type="primary" size="large"> 搜索 </n-button>
+                搜索
+              </n-button>
             </n-input-group>
           </div>
         </div>
