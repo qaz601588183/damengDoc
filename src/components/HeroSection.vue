@@ -1,42 +1,26 @@
 <template>
   <section
-    class="pt-24 pb-16 relative overflow-hidden hero-bg"
+    class="h-[400px] flex items-center overflow-hidden hero-bg"
     :style="{ backgroundImage: `url(${bgImage})` }"
   >
     <div class="w-full max-w-7xl mx-auto px-6">
-      <div class="flex flex-col items-center justify-center">
+      <div class="flex items-center">
         <!-- Content -->
         <div class="flex-1 w-full lg:max-w-xl">
-          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+          <h4 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
             达梦文档中心
-          </h1>
+          </h4>
 
           <!-- Search Box -->
-          <div class="relative w-full max-w-xl">
-            <n-input size="large" placeholder="请输入..." class="pr-24">
-              <template #prefix>
-                <svg
-                  class="w-5 h-5 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </template>
-            </n-input>
-            <n-button
-              type="primary"
-              size="large"
-              class="absolute right-1 top-1/2 -translate-y-1/2 rounded-md"
-            >
-              搜索
-            </n-button>
+          <div class="w-[660px]">
+            <n-input-group>
+              <n-input placeholder="请输入..." size="large">
+                <template #prefix>
+                  <Search class="w-5 h-5 text-gray-400" />
+                </template>
+              </n-input>
+              <n-button type="primary" size="large"> 搜索 </n-button>
+            </n-input-group>
           </div>
         </div>
       </div>
@@ -45,7 +29,8 @@
 </template>
 
 <script setup>
-import { NButton, NInput } from "naive-ui";
+import { Search } from "lucide-vue-next";
+import { NButton, NInput, NInputGroup } from "naive-ui";
 import bgImage from "../assets/bg.png";
 </script>
 
