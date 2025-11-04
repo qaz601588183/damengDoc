@@ -23,7 +23,7 @@
                 :class="[
                   'flex items-center gap-3 px-6 py-4 cursor-pointer transition-all',
                   activeKey === tab.name
-                    ? 'text-blue-600 bg-white'
+                    ? 'text-[#0053D2] bg-white'
                     : 'text-gray-700 hover:bg-gray-50',
                 ]"
               >

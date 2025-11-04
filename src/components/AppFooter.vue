@@ -1,9 +1,9 @@
 <template>
   <!-- CTA Section -->
-  <section class="py-12 bg-white">
+  <section class="py-12 bg-[#F5F8FD]">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between">
-        <h2 class="text-2xl font-bold text-blue-600">
+        <h2 class="text-2xl font-bold text-[#0053D2]">
           立即体验达梦数据全栈产品
         </h2>
         <button
@@ -16,8 +16,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-white py-12 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-6">
+  <footer class="bg-[#F5F8FD] py-12">
+    <div class="max-w-7xl mx-auto px-6 border-t border-gray-200">
       <div class="grid md:grid-cols-4 gap-12 mb-12">
         <!-- Company Info -->
         <div>
@@ -165,31 +165,17 @@
               </svg>
               400@dameng.com
             </li>
-            <li class="flex items-start gap-2">
-              <svg
-                class="w-4 h-4 mt-0.5 shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              2025年10月达孝技术团队
-            </li>
           </ul>
         </div>
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-6 border-t border-gray-200">
-        <div class="text-xs text-gray-500 text-center space-y-1">
+      <div class="pt-6 border-t">
+        <div
+          class="text-xs text-gray-500 text-center space-y-1 border-gray-200"
+        >
           <p>
-            地址：中国·京·东湖新技术开发区高新大道999号未来科技大厦C3栋16-19层
+            地址：中国·武汉·东湖新技术开发区高新大道999号未来科技大厦C3栋16-19层
           </p>
           <p>
             鄂公网安备 4201850200109号 | Copyright ©2024

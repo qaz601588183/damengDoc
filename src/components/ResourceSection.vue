@@ -25,7 +25,7 @@
           </p>
           <a
             href="#"
-            class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 text-sm"
+            class="inline-flex items-center text-[#0053D2] font-medium hover:text-blue-700 text-sm"
           >
             查看博客
             <img
@@ -50,7 +50,7 @@
           </p>
           <a
             href="#"
-            class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 text-sm"
+            class="inline-flex items-center text-[#0053D2] font-medium hover:text-blue-700 text-sm"
           >
             观看视频
             <img
@@ -75,7 +75,7 @@
           </p>
           <a
             href="#"
-            class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 text-sm"
+            class="inline-flex items-center text-[#0053D2] font-medium hover:text-blue-700 text-sm"
           >
             加入社区
             <img

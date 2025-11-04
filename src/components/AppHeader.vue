@@ -15,32 +15,32 @@
         <nav class="hidden md:flex items-center gap-8">
           <a
             href="#"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
+            class="text-gray-700 hover:text-[#0053D2] transition-colors"
             >产品</a
           >
           <a
             href="#"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
+            class="text-gray-700 hover:text-[#0053D2] transition-colors"
             >解决方案</a
           >
           <a
             href="#"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
+            class="text-gray-700 hover:text-[#0053D2] transition-colors"
             >客户</a
           >
           <a
             href="#"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
+            class="text-gray-700 hover:text-[#0053D2] transition-colors"
             >生态伙伴</a
           >
           <a
             href="#"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
+            class="text-gray-700 hover:text-[#0053D2] transition-colors"
             >文档</a
           >
           <a
             href="#"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
+            class="text-gray-700 hover:text-[#0053D2] transition-colors"
             >社区</a
           >
         </nav>
