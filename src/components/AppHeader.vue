@@ -29,25 +29,48 @@
               v-if="item.children && item.children.length > 0"
               class="dropdown-menu"
             >
-              <div class="max-w-full mx-auto px-9 py-8">
-                <div class="grid grid-cols-4 gap-x-8 gap-y-6">
-                  <template
-                    v-for="(child, index) in item.children"
-                    :key="index"
+              <div class="max-w-7xl mx-auto px-9 py-6">
+                <template v-for="(child, index) in item.children" :key="index">
+                  <!-- 主分类标题 -->
+                  <div
+                    v-if="child.isCategory"
+                    class="mb-2"
+                    :class="{ 'mt-4': index > 0 }"
                   >
-                    <!-- 主分类标题 -->
-                    <div
-                      v-if="child.isCategory"
-                      class="col-span-4 mb-2"
-                      :class="{ 'mt-6': index > 0 }"
+                    <h3
+                      class="text-base font-bold text-[#0053D2] flex items-center gap-2 cursor-pointer hover:underline"
                     >
-                      <h3
-                        class="text-base font-bold text-[#0053D2] flex items-center gap-2"
+                      {{ child.category }}
+                      <svg
+                        v-if="child.hasLink"
+                        class="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        {{ child.category }}
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </h3>
+                  </div>
+                  <!-- 子分类标题 -->
+                  <div v-else-if="child.isSubCategory" class="mt-4 mb-2">
+                    <h4 class="text-sm font-semibold text-[#0053D2]">
+                      {{ child.category }}
+                    </h4>
+                  </div>
+                  <!-- 普通菜单项 -->
+                  <a v-else href="#" class="dropdown-item block mb-2">
+                    <div class="flex items-start gap-3 p-2">
+                      <div
+                        class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
+                      >
                         <svg
-                          v-if="child.hasLink"
-                          class="w-4 h-4"
+                          class="w-4 h-4 text-[#0053D2]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -56,52 +79,21 @@
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             stroke-width="2"
-                            d="M9 5l7 7-7 7"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
                           />
                         </svg>
-                      </h3>
-                    </div>
-                    <!-- 子分类标题 -->
-                    <div
-                      v-else-if="child.isSubCategory"
-                      class="col-span-4 mt-4 mb-2"
-                    >
-                      <h4 class="text-sm font-semibold text-[#0053D2]">
-                        {{ child.category }}
-                      </h4>
-                    </div>
-                    <!-- 普通菜单项 -->
-                    <a v-else href="#" class="dropdown-item">
-                      <div class="flex items-start gap-3">
-                        <div
-                          class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
-                        >
-                          <svg
-                            class="w-5 h-5 text-[#0053D2]"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
-                            />
-                          </svg>
-                        </div>
-                        <div class="flex-1">
-                          <h4 class="text-sm font-medium text-gray-900 mb-1">
-                            {{ child.name }}
-                          </h4>
-                          <p class="text-xs text-gray-500 line-clamp-2">
-                            {{ child.description }}
-                          </p>
-                        </div>
                       </div>
-                    </a>
-                  </template>
-                </div>
+                      <div class="flex-1 min-w-0">
+                        <h4 class="text-sm font-semibold text-gray-900 mb-0.5">
+                          {{ child.name }}
+                        </h4>
+                        <p class="text-xs text-gray-500 leading-snug">
+                          {{ child.description }}
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </template>
               </div>
             </div>
           </div>
@@ -316,10 +308,11 @@ const menuItems = [
 
 /* 下拉菜单 */
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 100px;
   left: 0;
   right: 0;
+  width: 100%;
   background: white;
   border-top: 1px solid #e5e7eb;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -329,6 +322,26 @@ const menuItems = [
   transform: translateY(-10px);
   transition: all 0.3s ease;
   z-index: 40;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* 滚动条样式 */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }
 
 /* 悬停时显示下拉菜单 */
@@ -340,17 +353,19 @@ const menuItems = [
 
 /* 下拉菜单项 */
 .dropdown-item {
-  display: block;
-  padding: 12px;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .dropdown-item:hover {
-  background-color: #f3f4f6;
+  background-color: #f9fafb;
 }
 
 .dropdown-item:hover h4 {
   color: #0053d2;
+}
+
+.dropdown-item:hover .bg-blue-50 {
+  background-color: #dbeafe;
 }
 </style>
