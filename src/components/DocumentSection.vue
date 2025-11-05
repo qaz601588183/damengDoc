@@ -150,25 +150,9 @@
 <script setup>
 import { NCard } from "naive-ui";
 import { computed, h, ref } from "vue";
-import cacheIcon from "../assets/cache.png";
-import dbIcon from "../assets/db.png";
-import stIcon from "../assets/st.png";
-import sxIcon from "../assets/sx.png";
-import wdIcon from "../assets/wd.png";
+import { contentSections, productData } from "../data/menuData.js";
 
 const activeKey = ref("database");
-
-// 内容区域配置
-const contentSections = [
-  {
-    key: "relational",
-    title: "关系型数据库",
-  },
-  {
-    key: "nonRelational",
-    title: "非关系型数据库",
-  },
-];
 
 const tabs = [
   {
@@ -305,148 +289,13 @@ const tabs = [
   },
 ];
 
-// 内容数据
-const contentData = {
-  database: {
-    relational: [
-      {
-        id: 1,
-        title: "达梦数据库管理系统DM8及其集群",
-        description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-        icon: dbIcon,
-      },
-      {
-        id: 2,
-        title: "达梦学习数据库DMDM",
-        description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-        icon: dbIcon,
-      },
-    ],
-    nonRelational: [
-      {
-        id: 1,
-        title: "蜀天梦图数据库GDMBASE",
-        description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-        icon: stIcon,
-      },
-      {
-        id: 2,
-        title: "达梦缓存数据库DMCDM",
-        description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-        icon: cacheIcon,
-      },
-      {
-        id: 3,
-        title: "达梦时序数据库DMTDM",
-        description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-        icon: sxIcon,
-      },
-      {
-        id: 4,
-        title: "达梦文档数据库DMDDM",
-        description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-        icon: wdIcon,
-      },
-    ],
-  },
-  integrated: {
-    relational: [
-      {
-        id: 1,
-        title: "一体机关系型数据库",
-        description: "一体机关系型数据库相关内容...",
-        icon: dbIcon,
-      },
-    ],
-    nonRelational: [],
-  },
-  tools: {
-    relational: [],
-    nonRelational: [
-      {
-        id: 1,
-        title: "生态工具数据库",
-        description: "生态工具数据库相关内容...",
-        icon: dbIcon,
-      },
-    ],
-  },
-  cloud: {
-    relational: [
-      {
-        id: 1,
-        title: "云计算关系型数据库",
-        description: "云计算关系型数据库相关内容...",
-        icon: dbIcon,
-      },
-    ],
-    nonRelational: [],
-  },
-  bigdata: {
-    customSections: [
-      {
-        key: "storage",
-        title: "数据存储",
-        items: [
-          {
-            id: 1,
-            title: "达梦启云云原生大数据平台DMQYCDP",
-            description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-            icon: dbIcon,
-          },
-        ],
-      },
-      {
-        key: "governance",
-        title: "数据治理",
-        items: [
-          {
-            id: 1,
-            title: "达梦启智数据治理平台DMQZDMAN",
-            description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-            icon: dbIcon,
-          },
-        ],
-      },
-    ],
-  },
-  ai: {
-    customSections: [
-      {
-        key: "diagnostic",
-        title: "数据库自诊断调优平台",
-        items: [
-          {
-            id: 1,
-            title: "数据库自诊断调优平台",
-            description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-            icon: dbIcon,
-          },
-        ],
-      },
-      {
-        key: "computing",
-        title: "多模智算平台",
-        items: [
-          {
-            id: 1,
-            title: "多模智算平台",
-            description: "MySQL是全球流行的开源关系型数据库管理关系型数据库...",
-            icon: dbIcon,
-          },
-        ],
-      },
-    ],
-  },
-};
-
 const currentTab = computed(() => {
   return tabs.find((tab) => tab.name === activeKey.value);
 });
 
 const currentContent = computed(() => {
   return (
-    contentData[activeKey.value] || {
+    productData[activeKey.value] || {
       relational: [],
       nonRelational: [],
     }

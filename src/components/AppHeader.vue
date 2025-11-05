@@ -7,9 +7,12 @@
     >
       <div class="flex items-center justify-between gap-12 h-full">
         <!-- Logo -->
-        <div class="flex items-center gap-2">
+        <a
+          href="http://static.hongru.com.cn/D_dmsj/dm_cn/index.aspx"
+          class="flex items-center gap-2 cursor-pointer"
+        >
           <img :src="logo" alt="logo" class="w-[188px] h-[36px]" />
-        </div>
+        </a>
 
         <!-- Navigation -->
         <nav class="hidden md:flex items-center gap-8 h-full">
@@ -32,7 +35,7 @@
             >
               <div class="max-w-7xl mx-auto px-9 py-6 flex gap-8">
                 <!-- 左侧分类导航 -->
-                <div class="w-48 flex-shrink-0">
+                <div class="w-48 shrink-0">
                   <div
                     v-for="category in item.categories"
                     :key="category.key"
@@ -63,7 +66,7 @@
                       <!-- 产品卡片 -->
                       <div
                         v-if="currentCategoryContent.items"
-                        class="space-y-4"
+                        class="grid grid-cols-3 gap-4"
                       >
                         <a
                           v-for="product in currentCategoryContent.items"
@@ -71,11 +74,18 @@
                           href="#"
                           class="dropdown-card"
                         >
-                          <div class="flex items-start gap-4 p-4">
+                          <div class="flex flex-col gap-3 p-4 h-full">
                             <div
                               class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
                             >
+                              <img
+                                v-if="product.icon"
+                                :src="product.icon"
+                                :alt="product.name"
+                                class="w-8 h-8 object-contain"
+                              />
                               <svg
+                                v-else
                                 class="w-6 h-6 text-[#0053D2]"
                                 fill="none"
                                 stroke="currentColor"
@@ -121,7 +131,85 @@
                         </a>
                       </div>
 
-                      <!-- 子分类 -->
+                      <!-- 自定义分类（用于生态工具、大数据、人工智能） -->
+                      <div
+                        v-if="currentCategoryContent.customSections"
+                        v-for="(
+                          section, index
+                        ) in currentCategoryContent.customSections"
+                        :key="section.key"
+                        :class="index > 0 ? 'mt-8' : ''"
+                      >
+                        <h3
+                          class="text-base font-semibold text-[#0053D2] mb-4 flex items-center gap-2"
+                        >
+                          {{ section.title }}
+                          <svg
+                            v-if="section.hasLink"
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </h3>
+                        <div class="grid grid-cols-3 gap-4">
+                          <a
+                            v-for="product in section.items"
+                            :key="product.name"
+                            href="#"
+                            class="dropdown-card"
+                          >
+                            <div class="flex flex-col gap-3 p-4 h-full">
+                              <div
+                                class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
+                              >
+                                <img
+                                  v-if="product.icon"
+                                  :src="product.icon"
+                                  :alt="product.name"
+                                  class="w-8 h-8 object-contain"
+                                />
+                                <svg
+                                  v-else
+                                  class="w-6 h-6 text-[#0053D2]"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                                  />
+                                </svg>
+                              </div>
+                              <div class="flex-1 min-w-0">
+                                <h4
+                                  class="text-base font-semibold text-gray-900 mb-2"
+                                >
+                                  {{ product.name }}
+                                </h4>
+                                <p
+                                  v-if="product.description"
+                                  class="text-sm text-gray-600 leading-relaxed"
+                                >
+                                  {{ product.description }}
+                                </p>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- 子分类（用于数据库的非关系型数据库） -->
                       <div
                         v-if="currentCategoryContent.subSections"
                         v-for="section in currentCategoryContent.subSections"
@@ -131,18 +219,25 @@
                         <h3 class="text-base font-semibold text-[#0053D2] mb-4">
                           {{ section.title }}
                         </h3>
-                        <div class="space-y-4">
+                        <div class="grid grid-cols-3 gap-4">
                           <a
                             v-for="product in section.items"
                             :key="product.name"
                             href="#"
                             class="dropdown-card"
                           >
-                            <div class="flex items-start gap-4 p-4">
+                            <div class="flex flex-col gap-3 p-4 h-full">
                               <div
                                 class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg shrink-0"
                               >
+                                <img
+                                  v-if="product.icon"
+                                  :src="product.icon"
+                                  :alt="product.name"
+                                  class="w-8 h-8 object-contain"
+                                />
                                 <svg
+                                  v-else
                                   class="w-6 h-6 text-[#0053D2]"
                                   fill="none"
                                   stroke="currentColor"
@@ -226,131 +321,58 @@ import { computed, ref } from "vue";
 import downloadIcon from "../assets/download.png";
 import localeIcon from "../assets/locale.png";
 import logo from "../assets/logo.png";
+import {
+  contentSections,
+  productCategories,
+  productData,
+} from "../data/menuData.js";
 
 const activeCategory = ref("database");
 const activeMenuItem = ref(null);
 
 // 计算当前分类的内容
 const currentCategoryContent = computed(() => {
-  if (!activeMenuItem.value || !activeMenuItem.value.content) {
+  if (!activeCategory.value) {
     return null;
   }
-  return activeMenuItem.value.content[activeCategory.value];
+
+  const data = productData[activeCategory.value];
+  if (!data) return null;
+
+  // 如果有自定义分类（大数据、人工智能）
+  if (data.customSections) {
+    return data;
+  }
+
+  // 标准分类（数据库、一体机等）
+  const result = {
+    items: data.relational || [],
+    subSections: [],
+  };
+
+  // 添加子分类标题
+  if (activeCategory.value === "database") {
+    result.title = contentSections[0].title; // 关系型数据库
+    if (data.nonRelational && data.nonRelational.length > 0) {
+      result.subSections.push({
+        title: contentSections[1].title, // 非关系型数据库
+        items: data.nonRelational,
+      });
+    }
+  } else if (data.relational && data.relational.length > 0) {
+    result.items = data.relational;
+  } else if (data.nonRelational && data.nonRelational.length > 0) {
+    result.items = data.nonRelational;
+  }
+
+  return result;
 });
 
 // 菜单配置
 const menuItems = [
   {
     name: "产品",
-    categories: [
-      { key: "database", name: "数据库" },
-      { key: "integrated", name: "一体机" },
-      { key: "tools", name: "生态工具" },
-      { key: "cloud", name: "云计算" },
-      { key: "bigdata", name: "大数据" },
-      { key: "ai", name: "人工智能" },
-    ],
-    content: {
-      database: {
-        title: "关系型数据库",
-        items: [
-          {
-            name: "达梦数据库管理系统DM",
-            description:
-              "100%自主研发的大型通用关系型数据库，支持单机/主备、共享集群、分布式等多种部署方式，覆盖OLAP/OLTP/HTAP交易分析混合负载场景，为用户提供具备极致事宜性、高可用性、高可靠性、高安全性及易用性的企业级数据库产品与服务。",
-          },
-        ],
-        buttons: [
-          { name: "达梦数据共享集群DMDSC" },
-          { name: "达梦数据守护集群DMDataWatch" },
-          { name: "达梦分布计算集群DMDPC" },
-        ],
-        subSections: [
-          {
-            title: "非关系型数据库",
-            items: [
-              {
-                name: "蜀天梦图数据库GDMBASE",
-                description: "自研分布式原生图数据库",
-              },
-              {
-                name: "达梦缓存数据库DMCDM",
-                description: "适用于缓存热点数据，提升数据访问性能",
-              },
-              {
-                name: "达梦时序数据库DMTDM",
-                description: "支持结构化、半结构和非结构化数据",
-              },
-              {
-                name: "达梦文档数据库DMDDM",
-                description: "独立研发的分布式原生时序数据库产品",
-              },
-            ],
-          },
-        ],
-      },
-      integrated: {
-        title: "一体机",
-        items: [
-          {
-            name: "蜀天梦图数据库GDMBASE",
-            description: "自研分布式原生图数据库",
-          },
-          {
-            name: "达梦缓存数据库DMCDM",
-            description: "适用于缓存热点数据，提升数据访问性能",
-          },
-          {
-            name: "达梦时序数据库DMTDM",
-            description: "支持结构化、半结构和非结构化数据",
-          },
-        ],
-      },
-      tools: {
-        title: "达梦数+数据融合软件DMDF",
-        items: [
-          {
-            name: "达梦数据复制软件DMDRS",
-            description: "异构数据库类型到数据复制迁移",
-          },
-          {
-            name: "达梦数据集成软件DMDIS",
-            description: "实现各类数据的清洗转换整合",
-          },
-          {
-            name: "达梦数据校验软件DMDVS",
-            description: "快速实现数据—致性校验与修复",
-          },
-          {
-            name: "达梦数据融合管理平台DMDFM",
-            description: "数据融合管理、监控运维、故障处理",
-          },
-        ],
-        subSections: [
-          {
-            title: "SQLark百灵连接",
-            items: [
-              {
-                name: "百灵连接SQLark",
-                description: "多数据库支持 | SQL开发 | 数据生成...",
-              },
-            ],
-          },
-        ],
-      },
-      cloud: {
-        title: "云计算",
-        items: [],
-      },
-      bigdata: {
-        title: "大数据",
-        items: [],
-      },
-      ai: {
-        title: "人工智能",
-        items: [],
-      },
-    },
+    categories: productCategories,
   },
   {
     name: "一体机",
@@ -450,7 +472,7 @@ const menuItems = [
   left: 0;
   right: 0;
   height: 3px;
-  background-color: #0053d2;
+  background-color: #ec1b34;
   animation: slideIn 0.3s ease-out;
 }
 
