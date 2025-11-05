@@ -1,13 +1,13 @@
 <template>
   <!-- CTA Section -->
-  <section class="py-12 bg-[#F5F8FD]">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-center justify-between">
-        <h2 class="text-3xl font-bold text-[#0053D2]">
+  <section class="py-8 md:py-12 bg-[#F5F8FD]">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+        <h2 class="text-xl md:text-3xl font-bold text-[#0053D2] text-center md:text-left">
           立即体验达梦数据全栈产品
         </h2>
         <button
-          class="px-8 py-3 bg-red-600 text-white font-medium rounded hover:bg-red-700 transition-colors"
+          class="px-6 md:px-8 py-2 md:py-3 bg-red-600 text-white font-medium rounded hover:bg-red-700 transition-colors whitespace-nowrap"
         >
           下载中心
         </button>
@@ -15,21 +15,21 @@
     </div>
   </section>
 
-  <div class="px-6 max-w-7xl mx-auto">
+  <div class="px-4 md:px-6 max-w-7xl mx-auto">
     <div class="border-t"></div>
   </div>
   <!-- Footer -->
-  <footer class="bg-[#F5F8FD] py-10">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex justify-between pb-12">
+  <footer class="bg-[#F5F8FD] py-6 md:py-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row justify-between pb-8 md:pb-12 gap-8">
         <!-- Company Info -->
-        <div class="w-2/5">
-          <h3 class="text-gray-900 font-bold text-xl mb-4">达梦数据</h3>
-          <p class="text-sm text-gray-600 leading-relaxed mb-6">
+        <div class="w-full md:w-2/5">
+          <h3 class="text-gray-900 font-bold text-lg md:text-xl mb-3 md:mb-4">达梦数据</h3>
+          <p class="text-xs md:text-sm text-gray-600 leading-relaxed mb-4 md:mb-6">
             达梦数据作为国内领先的数据库产品开发服务商，国内数据库基础软件产品、发展的关键提出解决，为客户提供高最终最全生命周期的产品与解决方案。多年来，公司坚持自主创新，独立研发的技术体系，核心代码自主研发创造，高达100%，构建了中国数据库的代码墙。
           </p>
           <!-- Social Icons -->
-          <div class="flex gap-3">
+          <div class="flex gap-2 md:gap-3">
             <a
               href="#"
               class="text-gray-600 hover:text-gray-900 transition-colors"
@@ -93,11 +93,11 @@
           </div>
         </div>
 
-        <div class="flex justify-between gap-12">
+        <div class="w-full md:w-auto flex flex-col md:flex-row justify-between gap-6 md:gap-12">
           <!-- About Us -->
           <div>
-            <h3 class="text-gray-900 font-bold text-xl mb-4">关于我们</h3>
-            <ul class="space-y-3 text-sm text-gray-600">
+            <h3 class="text-gray-900 font-bold text-lg md:text-xl mb-3 md:mb-4">关于我们</h3>
+            <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600">
               <li>
                 <a href="#" class="hover:text-gray-900 transition-colors"
                   >达梦新闻</a
@@ -118,8 +118,8 @@
 
           <!-- Resources -->
           <div>
-            <h3 class="text-gray-900 font-bold text-xl mb-4">资源中心</h3>
-            <ul class="space-y-3 text-sm text-gray-600">
+            <h3 class="text-gray-900 font-bold text-lg md:text-xl mb-3 md:mb-4">资源中心</h3>
+            <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600">
               <li>
                 <a href="#" class="hover:text-gray-900 transition-colors"
                   >下载中心</a
@@ -135,8 +135,8 @@
 
           <!-- Contact -->
           <div>
-            <h3 class="text-gray-900 font-bold text-xl mb-4">联系我们</h3>
-            <ul class="space-y-3 text-sm text-gray-600">
+            <h3 class="text-gray-900 font-bold text-lg md:text-xl mb-3 md:mb-4">联系我们</h3>
+            <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600">
               <li class="flex items-center gap-2">
                 <svg
                   class="w-4 h-4"
@@ -175,14 +175,14 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-6 border-t">
+      <div class="pt-4 md:pt-6 border-t">
         <div
-          class="text-xs text-gray-400 text-center space-y-1 border-gray-200"
+          class="text-[10px] md:text-xs text-gray-400 text-center space-y-1 border-gray-200"
         >
-          <p>
+          <p class="leading-relaxed">
             地址：中国·武汉·东湖新技术开发区高新大道999号未来科技大厦C3栋16-19层
           </p>
-          <p>
+          <p class="leading-relaxed">
             鄂公网安备 4201850200109号 | Copyright ©2024
             武汉达梦数据库股份有限公司 | 用户协议 | 隐私保护声明
           </p>

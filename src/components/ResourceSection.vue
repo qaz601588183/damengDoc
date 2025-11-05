@@ -1,26 +1,26 @@
 <template>
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
+  <section class="py-8 md:py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="text-center mb-8 md:mb-12">
         <h2
-          class="text-xl font-bold text-gray-900 mb-4"
-          style="font-size: 20px"
+          class="text-lg md:text-xl font-bold text-gray-900 mb-4"
+          style="font-size: 18px; md:font-size: 20px"
         >
           更多资源
         </h2>
         <div class="w-8 h-0.5 mx-auto" style="background-color: #ec1b34"></div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         <!-- 技术博客 -->
         <div
-          class="bg-white rounded-xl p-8 hover:shadow-lg transition-all cursor-pointer"
+          class="bg-white rounded-xl p-6 md:p-8 hover:shadow-lg transition-all cursor-pointer"
         >
-          <div class="flex items-center gap-3 mb-6">
-            <img :src="jsIcon" alt="技术博客" class="w-5 h-5" />
-            <h3 class="text-xl font-bold text-gray-900">技术博客</h3>
+          <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+            <img :src="jsIcon" alt="技术博客" class="w-4 h-4 md:w-5 md:h-5" />
+            <h3 class="text-lg md:text-xl font-bold text-gray-900">技术博客</h3>
           </div>
-          <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm">
             深度解析DM8核心技术原理，实践案例与技术干货定期更新
           </p>
           <a
@@ -39,13 +39,13 @@
 
         <!-- 教学视频 -->
         <div
-          class="bg-white rounded-xl p-8 hover:shadow-lg transition-all cursor-pointer"
+          class="bg-white rounded-xl p-6 md:p-8 hover:shadow-lg transition-all cursor-pointer"
         >
-          <div class="flex items-center gap-3 mb-6">
-            <img :src="jxIcon" alt="教学视频" class="w-5 h-5" />
-            <h3 class="text-xl font-bold text-gray-900">教学视频</h3>
+          <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+            <img :src="jxIcon" alt="教学视频" class="w-4 h-4 md:w-5 md:h-5" />
+            <h3 class="text-lg md:text-xl font-bold text-gray-900">教学视频</h3>
           </div>
-          <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm">
             通过可视化教程快速掌握DM8安装部署、操作维护与开发技巧
           </p>
           <a
@@ -64,13 +64,13 @@
 
         <!-- 社区支持 -->
         <div
-          class="bg-white rounded-xl p-8 hover:shadow-lg transition-all cursor-pointer"
+          class="bg-white rounded-xl p-6 md:p-8 hover:shadow-lg transition-all cursor-pointer"
         >
-          <div class="flex items-center gap-3 mb-6">
-            <img :src="sqIcon" alt="社区支持" class="w-5 h-5" />
-            <h3 class="text-xl font-bold text-gray-900">社区支持</h3>
+          <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+            <img :src="sqIcon" alt="社区支持" class="w-4 h-4 md:w-5 md:h-5" />
+            <h3 class="text-lg md:text-xl font-bold text-gray-900">社区支持</h3>
           </div>
-          <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm">
             加入开发者社区获取技术支持，与其他开发者交流经验与解决方案
           </p>
           <a

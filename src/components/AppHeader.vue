@@ -3,19 +3,19 @@
     class="sticky top-0 left-0 right-0 bg-white border-b border-gray-200 z-50"
   >
     <div
-      class="max-w-full mx-auto px-9 h-[60px] flex items-center justify-between"
+      class="max-w-full mx-auto px-4 md:px-9 h-[60px] flex items-center justify-between"
     >
-      <div class="flex items-center justify-between gap-12 h-full">
+      <div class="flex items-center justify-between gap-4 md:gap-12 h-full">
         <!-- Logo -->
         <a
           href="http://static.hongru.com.cn/D_dmsj/dm_cn/index.aspx"
           class="flex items-center gap-2 cursor-pointer"
         >
-          <img :src="logo" alt="logo" class="w-[188px] h-[36px]" />
+          <img :src="logo" alt="logo" class="w-[140px] h-[27px] md:w-[188px] md:h-[36px]" />
         </a>
 
         <!-- Navigation -->
-        <nav class="hidden md:flex items-center gap-8 h-full">
+        <nav class="hidden lg:flex items-center gap-8 h-full">
           <div
             v-for="item in menuItems"
             :key="item.name"
@@ -287,8 +287,8 @@
       </div>
 
       <!-- Right Actions -->
-      <div class="flex items-center gap-4">
-        <n-button text class="hidden md:inline-flex">
+      <div class="flex items-center gap-2 md:gap-4">
+        <n-button text class="hidden lg:inline-flex">
           <template #icon>
             <svg
               class="w-5 h-5"
@@ -305,22 +305,80 @@
             </svg>
           </template>
         </n-button>
-        <span class="text-gray-600 text-sm hidden md:inline">登录/注册</span>
-        <span class="text-gray-400 hidden md:inline">|</span>
-        <span class="text-gray-600 text-sm hidden md:flex items-center gap-1">
+        <span class="text-gray-600 text-sm hidden lg:inline">登录/注册</span>
+        <span class="text-gray-400 hidden lg:inline">|</span>
+        <span class="text-gray-600 text-sm hidden lg:flex items-center gap-1">
           <img :src="localeIcon" alt="locale" class="w-4 h-4" />
           中文
         </span>
-        <n-button type="primary" class="rounded-md">
+        <n-button type="primary" class="rounded-md text-sm md:text-base px-3 md:px-4">
           <img
             :src="downloadIcon"
             alt="download"
             class="w-[14px] h-[10px] mr-1"
           />
-          下载中心
+          <span class="hidden sm:inline">下载中心</span>
+          <span class="sm:hidden">下载</span>
         </n-button>
+
+        <!-- Mobile Menu Button -->
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="lg:hidden p-2 text-gray-600 hover:text-gray-900"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              v-if="!mobileMenuOpen"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+            <path
+              v-else
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- Mobile Menu -->
+    <transition name="mobile-menu">
+      <div
+        v-if="mobileMenuOpen"
+        class="lg:hidden fixed inset-0 top-[60px] bg-white z-40 overflow-y-auto"
+      >
+        <div class="px-4 py-6">
+          <div
+            v-for="item in menuItems"
+            :key="item.name"
+            class="border-b border-gray-200 py-4"
+          >
+            <div class="text-base font-medium text-gray-900 mb-2">
+              {{ item.name }}
+            </div>
+          </div>
+
+          <!-- Mobile Actions -->
+          <div class="mt-6 space-y-4">
+            <div class="flex items-center gap-2 text-sm text-gray-600">
+              <img :src="localeIcon" alt="locale" class="w-4 h-4" />
+              中文
+            </div>
+            <div class="text-sm text-gray-600">登录/注册</div>
+          </div>
+        </div>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -338,6 +396,7 @@ import {
 
 const activeCategory = ref("database");
 const activeMenuItem = ref(null);
+const mobileMenuOpen = ref(false);
 
 // 计算当前分类的内容
 const currentCategoryContent = computed(() => {
@@ -606,5 +665,21 @@ const menuItems = [
 .dropdown-button:hover {
   background-color: #dbeafe;
   color: #1e3a8a;
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 </style>

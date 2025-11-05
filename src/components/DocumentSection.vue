@@ -1,10 +1,10 @@
 <template>
-  <section class="py-16 bg-gray-50">
-    <div class="w-full max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
+  <section class="py-8 md:py-16 bg-gray-50">
+    <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
+      <div class="text-center mb-8 md:mb-12">
         <h2
-          class="text-xl font-bold text-gray-900 mb-4"
-          style="font-size: 20px"
+          class="text-lg md:text-xl font-bold text-gray-900 mb-4"
+          style="font-size: 18px; md:font-size: 20px"
         >
           文档导航
         </h2>
@@ -12,9 +12,29 @@
       </div>
 
       <div class="rounded-xl overflow-hidden">
-        <div class="flex">
-          <!-- 左侧导航 -->
-          <div class="w-64">
+        <!-- Mobile: Horizontal Scroll Tabs -->
+        <div class="md:hidden mb-4 overflow-x-auto">
+          <div class="flex gap-2 pb-2 px-1">
+            <div
+              v-for="tab in tabs"
+              :key="tab.name"
+              @click="activeKey = tab.name"
+              :class="[
+                'flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer transition-all whitespace-nowrap',
+                activeKey === tab.name
+                  ? 'text-[#0053D2] bg-white shadow-sm'
+                  : 'text-gray-700 bg-white',
+              ]"
+            >
+              <component :is="tab.icon" class="shrink-0 w-4 h-4" />
+              <span class="font-medium text-sm">{{ tab.label }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row">
+          <!-- 左侧导航 - Desktop Only -->
+          <div class="hidden md:block w-64">
             <div class="py-4">
               <div
                 v-for="tab in tabs"
@@ -34,7 +54,7 @@
           </div>
 
           <!-- 右侧内容区 -->
-          <div class="flex-1 p-8 bg-transparent">
+          <div class="flex-1 p-4 md:p-8 bg-transparent">
             <transition name="fade" mode="out-in">
               <div :key="activeKey">
                 <!-- 自定义分类布局（用于大数据、人工智能） -->
@@ -44,14 +64,14 @@
                     :key="section.key"
                     :class="
                       index < currentContent.customSections.length - 1
-                        ? 'mb-8'
+                        ? 'mb-6 md:mb-8'
                         : ''
                     "
                   >
-                    <h3 class="text-base font-semibold text-gray-900 mb-3">
+                    <h3 class="text-sm md:text-base font-semibold text-gray-900 mb-3">
                       {{ section.title }}
                     </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                       <n-card
                         v-for="item in section.items"
                         :key="item.id"
@@ -63,22 +83,22 @@
                             : '',
                         ]"
                       >
-                        <div class="flex items-start gap-4">
+                        <div class="flex items-start gap-3 md:gap-4">
                           <div
-                            class="w-12 h-12 flex items-center justify-center shrink-0 rounded-lg"
+                            class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shrink-0 rounded-lg"
                           >
                             <img
                               v-if="item.icon"
                               :src="item.icon"
                               :alt="item.title"
-                              class="w-8 h-8 object-contain"
+                              class="w-6 h-6 md:w-8 md:h-8 object-contain"
                             />
                           </div>
                           <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-gray-900 mb-2">
+                            <h4 class="text-sm md:text-base font-semibold text-gray-900 mb-1 md:mb-2">
                               {{ item.title }}
                             </h4>
-                            <p class="text-sm text-gray-600 line-clamp-2">
+                            <p class="text-xs md:text-sm text-gray-600 line-clamp-2">
                               {{ item.description }}
                             </p>
                           </div>
@@ -95,7 +115,7 @@
                     :key="section.key"
                     :class="
                       section.key === 'relational' && shouldShowSectionTitle
-                        ? 'mb-8'
+                        ? 'mb-6 md:mb-8'
                         : ''
                     "
                   >
@@ -107,11 +127,11 @@
                     >
                       <h3
                         v-if="shouldShowSectionTitle"
-                        class="text-base font-semibold text-gray-900 mb-3"
+                        class="text-sm md:text-base font-semibold text-gray-900 mb-3"
                       >
                         {{ section.title }}
                       </h3>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                         <n-card
                           v-for="item in currentContent[section.key]"
                           :key="item.id"
@@ -123,22 +143,22 @@
                               : '',
                           ]"
                         >
-                          <div class="flex items-start gap-4">
+                          <div class="flex items-start gap-3 md:gap-4">
                             <div
-                              class="w-12 h-12 flex items-center justify-center shrink-0 rounded-lg"
+                              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shrink-0 rounded-lg"
                             >
                               <img
                                 v-if="item.icon"
                                 :src="item.icon"
                                 :alt="item.title"
-                                class="w-8 h-8 object-contain"
+                                class="w-6 h-6 md:w-8 md:h-8 object-contain"
                               />
                             </div>
                             <div class="flex-1 min-w-0">
-                              <h4 class="font-semibold text-gray-900 mb-2">
+                              <h4 class="text-sm md:text-base font-semibold text-gray-900 mb-1 md:mb-2">
                                 {{ item.title }}
                               </h4>
-                              <p class="text-sm text-gray-600 line-clamp-2">
+                              <p class="text-xs md:text-sm text-gray-600 line-clamp-2">
                                 {{ item.description }}
                               </p>
                             </div>
