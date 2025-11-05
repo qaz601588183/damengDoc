@@ -1,8 +1,26 @@
 import cacheIcon from "../assets/cache.png";
 import dbIcon from "../assets/db.png";
+import dsj1Icon from "../assets/dsj-1.png";
+import dsj2Icon from "../assets/dsj-2.png";
+import dsj3Icon from "../assets/dsj-3.png";
+import dsj4Icon from "../assets/dsj-4.png";
+import dsj5Icon from "../assets/dsj-5.png";
+import dsj6Icon from "../assets/dsj-6.png";
+import dsj7Icon from "../assets/dsj-7.png";
+import dsj8Icon from "../assets/dsj-8.png";
+import rgzn1Icon from "../assets/rgzn-1.png";
+import st1Icon from "../assets/st-1.png";
+import st2Icon from "../assets/st-2.png";
+import st3Icon from "../assets/st-3.png";
+import st4Icon from "../assets/st-4.png";
+import st5Icon from "../assets/st-5.png";
 import stIcon from "../assets/st.png";
 import sxIcon from "../assets/sx.png";
 import wdIcon from "../assets/wd.png";
+import yjs1Icon from "../assets/yjs-1.png";
+import yjs2Icon from "../assets/yjs-2.png";
+import yjs3Icon from "../assets/yjs-3.png";
+import yjs4Icon from "../assets/yjs-4.png";
 
 // 产品分类配置
 export const productCategories = [
@@ -37,7 +55,7 @@ export const productData = {
         description:
           "100%自主研发的大型通用关系型数据库，支持单机/主备、共享集群、分布式等多种部署方式，覆盖OLAP/OLTP/HTAP交易分析混合负载场景，为用户提供具备极致事宜性、高可用性、高可靠性、高安全性及易用性的企业级数据库产品与服务。",
         icon: dbIcon,
-        featured: true, // 标记为特色产品，显示大卡片
+        span: 3, // 占据3列（整行）
       },
     ],
     nonRelational: [
@@ -116,28 +134,28 @@ export const productData = {
             title: "达梦数据复制软件DMDRS",
             name: "达梦数据复制软件DMDRS",
             description: "异构数据库类型到数据复制迁移",
-            icon: dbIcon,
+            icon: st1Icon,
           },
           {
             id: 2,
             title: "达梦数据集成软件DMDIS",
             name: "达梦数据集成软件DMDIS",
             description: "实现各类数据的清洗转换整合",
-            icon: dbIcon,
+            icon: st2Icon,
           },
           {
             id: 3,
             title: "达梦数据校验软件DMDVS",
             name: "达梦数据校验软件DMDVS",
             description: "快速实现数据—致性校验与修复",
-            icon: dbIcon,
+            icon: st3Icon,
           },
           {
             id: 4,
             title: "达梦数据融合管理平台DMDFM",
             name: "达梦数据融合管理平台DMDFM",
             description: "数据融合管理、监控运维、故障处理",
-            icon: dbIcon,
+            icon: st4Icon,
           },
         ],
       },
@@ -150,7 +168,7 @@ export const productData = {
             title: "百灵连接SQLark",
             name: "百灵连接SQLark",
             description: "多数据库支持 | SQL开发 | 数据生成...",
-            icon: dbIcon,
+            icon: st5Icon,
           },
         ],
       },
@@ -163,32 +181,31 @@ export const productData = {
         title: "达梦启云数据库云服务系统DMCDB",
         name: "达梦启云数据库云服务系统DMCDB",
         description: "弹性伸缩极简云原生数据库",
-        icon: dbIcon,
+        icon: yjs1Icon,
       },
       {
         id: 2,
         title: "达梦启云云开放平台DMCOP",
         name: "达梦启云云开放平台DMCOP",
         description: "面向云原生应用的一体化全域PaaS平台",
-        icon: dbIcon,
+        icon: yjs2Icon,
       },
       {
         id: 3,
         title: "达梦启云混合云管平台DMMCP",
         name: "达梦启云混合云管平台DMMCP",
         description: "更高效的混合云管理和优化服务",
-        icon: dbIcon,
+        icon: yjs3Icon,
       },
-    ],
-    nonRelational: [
       {
         id: 4,
         title: "达梦云原生信创适配平台DMXCP",
         name: "达梦云原生信创适配平台DMXCP",
         description: "企业级信创环境，信创适配无忧",
-        icon: dbIcon,
+        icon: yjs4Icon,
       },
     ],
+    nonRelational: [],
   },
   bigdata: {
     customSections: [
@@ -201,14 +218,14 @@ export const productData = {
             title: "达梦物联网平台DMThings",
             name: "达梦物联网平台DMThings",
             description: "一站式物联网设备管理&运维",
-            icon: dbIcon,
+            icon: dsj1Icon,
           },
           {
             id: 2,
             title: "达梦数据报表平台软件DMReport",
             name: "达梦数据报表平台软件DMReport",
             description: "通用型数据采集应用平台",
-            icon: dbIcon,
+            icon: dsj2Icon,
           },
         ],
       },
@@ -221,7 +238,7 @@ export const productData = {
             title: "达梦启云云原生大数据平台DMQYCDP",
             name: "达梦启云云原生大数据平台DMQYCDP",
             description: "坚实的大数据基座支撑能力",
-            icon: dbIcon,
+            icon: dsj3Icon,
           },
         ],
       },
@@ -234,7 +251,7 @@ export const productData = {
             title: "达梦启智数据治理平台DMQZDMAN",
             name: "达梦启智数据治理平台DMQZDMAN",
             description: "数据全生命周期治理&应用",
-            icon: dbIcon,
+            icon: dsj4Icon,
           },
         ],
       },
@@ -247,28 +264,28 @@ export const productData = {
             title: "达梦启智商业智能软件DMQZBI",
             name: "达梦启智商业智能软件DMQZBI",
             description: "数据在线复杂查询及分析的自助式BI工具",
-            icon: dbIcon,
+            icon: dsj5Icon,
           },
           {
             id: 2,
             title: "达梦启智大数据可视化系统DMQZDV",
             name: "达梦启智大数据可视化系统DMQZDV",
             description: `0代码"轻松实现可视化页面设计"`,
-            icon: dbIcon,
+            icon: dsj6Icon,
           },
           {
             id: 3,
             title: "达梦启智大数据分析系统DMQZIA",
             name: "达梦启智大数据分析系统DMQZIA",
             description: "全能型数据分析处理和数据挖掘",
-            icon: dbIcon,
+            icon: dsj7Icon,
           },
           {
             id: 4,
             title: "达梦时空大数据平台DMGeoDMS",
             name: "达梦时空大数据平台DMGeoDMS",
             description: "空间数据与空间服务资源管理",
-            icon: dbIcon,
+            icon: dsj8Icon,
           },
         ],
       },
@@ -281,7 +298,7 @@ export const productData = {
         title: "数据库自诊断调优平台",
         name: "数据库自诊断调优平台",
         description: "空间数据与空间服务资源管理",
-        icon: dbIcon,
+        icon: rgzn1Icon,
       },
     ],
     nonRelational: [],

@@ -72,7 +72,10 @@
                           v-for="product in currentCategoryContent.items"
                           :key="product.name"
                           href="#"
-                          class="dropdown-card"
+                          :class="[
+                            'dropdown-card',
+                            product.span === 3 ? 'col-span-3' : '',
+                          ]"
                         >
                           <div class="flex flex-col gap-3 p-4 h-full">
                             <div
@@ -164,7 +167,10 @@
                             v-for="product in section.items"
                             :key="product.name"
                             href="#"
-                            class="dropdown-card"
+                            :class="[
+                              'dropdown-card',
+                              product.span === 3 ? 'col-span-3' : '',
+                            ]"
                           >
                             <div class="flex flex-col gap-3 p-4 h-full">
                               <div
@@ -224,7 +230,10 @@
                             v-for="product in section.items"
                             :key="product.name"
                             href="#"
-                            class="dropdown-card"
+                            :class="[
+                              'dropdown-card',
+                              product.span === 3 ? 'col-span-3' : '',
+                            ]"
                           >
                             <div class="flex flex-col gap-3 p-4 h-full">
                               <div

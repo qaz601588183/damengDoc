@@ -56,7 +56,12 @@
                         v-for="item in section.items"
                         :key="item.id"
                         hoverable
-                        class="cursor-pointer rounded-[8px]! border border-[#EFF1F6]"
+                        :class="[
+                          'cursor-pointer rounded-[8px]! border border-[#EFF1F6]',
+                          item.span === 3 || item.span === 2
+                            ? 'md:col-span-2'
+                            : '',
+                        ]"
                       >
                         <div class="flex items-start gap-4">
                           <div
@@ -111,7 +116,12 @@
                           v-for="item in currentContent[section.key]"
                           :key="item.id"
                           hoverable
-                          class="cursor-pointer rounded-[8px]! border border-[#EFF1F6]"
+                          :class="[
+                            'cursor-pointer rounded-[8px]! border border-[#EFF1F6]',
+                            item.span === 3 || item.span === 2
+                              ? 'md:col-span-2'
+                              : '',
+                          ]"
                         >
                           <div class="flex items-start gap-4">
                             <div
