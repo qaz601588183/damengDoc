@@ -11,7 +11,11 @@
           href="http://static.hongru.com.cn/D_dmsj/dm_cn/index.aspx"
           class="flex items-center gap-2 cursor-pointer"
         >
-          <img :src="logo" alt="logo" class="w-[140px] h-[27px] md:w-[188px] md:h-[36px]" />
+          <img
+            :src="logo"
+            alt="logo"
+            class="w-[140px] h-[27px] md:w-[188px] md:h-[36px]"
+          />
         </a>
 
         <!-- Navigation -->
@@ -71,7 +75,9 @@
                         <a
                           v-for="product in currentCategoryContent.items"
                           :key="product.name"
-                          href="#"
+                          href="https://www.func.xin/docs/category/dmdrs-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           :class="[
                             'dropdown-card',
                             product.span === 3 ? 'col-span-3' : '',
@@ -127,7 +133,9 @@
                         <a
                           v-for="btn in currentCategoryContent.buttons"
                           :key="btn.name"
-                          href="#"
+                          href="https://www.func.xin/docs/category/dmdrs-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           class="dropdown-button"
                         >
                           {{ btn.name }}
@@ -166,7 +174,9 @@
                           <a
                             v-for="product in section.items"
                             :key="product.name"
-                            href="#"
+                            href="https://www.func.xin/docs/category/dmdrs-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             :class="[
                               'dropdown-card',
                               product.span === 3 ? 'col-span-3' : '',
@@ -229,7 +239,9 @@
                           <a
                             v-for="product in section.items"
                             :key="product.name"
-                            href="#"
+                            href="https://www.func.xin/docs/category/dmdrs-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             :class="[
                               'dropdown-card',
                               product.span === 3 ? 'col-span-3' : '',
@@ -311,7 +323,10 @@
           <img :src="localeIcon" alt="locale" class="w-4 h-4" />
           中文
         </span>
-        <n-button type="primary" class="rounded-md text-sm md:text-base px-3 md:px-4">
+        <n-button
+          type="primary"
+          class="rounded-md text-sm md:text-base px-3 md:px-4"
+        >
           <img
             :src="downloadIcon"
             alt="download"

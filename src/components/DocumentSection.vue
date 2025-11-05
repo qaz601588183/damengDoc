@@ -3,8 +3,7 @@
     <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
       <div class="text-center mb-8 md:mb-12">
         <h2
-          class="text-lg md:text-xl font-bold text-gray-900 mb-4"
-          style="font-size: 18px; md:font-size: 20px"
+          class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[20px]"
         >
           文档导航
         </h2>
@@ -68,7 +67,9 @@
                         : ''
                     "
                   >
-                    <h3 class="text-sm md:text-base font-semibold text-gray-900 mb-3">
+                    <h3
+                      class="text-sm md:text-base font-semibold text-gray-900 mb-3"
+                    >
                       {{ section.title }}
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
@@ -76,6 +77,7 @@
                         v-for="item in section.items"
                         :key="item.id"
                         hoverable
+                        @click="openDocLink"
                         :class="[
                           'cursor-pointer rounded-[8px]! border border-[#EFF1F6]',
                           item.span === 3 || item.span === 2
@@ -95,10 +97,14 @@
                             />
                           </div>
                           <div class="flex-1 min-w-0">
-                            <h4 class="text-sm md:text-base font-semibold text-gray-900 mb-1 md:mb-2">
+                            <h4
+                              class="text-sm md:text-base font-semibold text-gray-900 mb-1 md:mb-2"
+                            >
                               {{ item.title }}
                             </h4>
-                            <p class="text-xs md:text-sm text-gray-600 line-clamp-2">
+                            <p
+                              class="text-xs md:text-sm text-gray-600 line-clamp-2"
+                            >
                               {{ item.description }}
                             </p>
                           </div>
@@ -131,11 +137,14 @@
                       >
                         {{ section.title }}
                       </h3>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                      <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4"
+                      >
                         <n-card
                           v-for="item in currentContent[section.key]"
                           :key="item.id"
                           hoverable
+                          @click="openDocLink"
                           :class="[
                             'cursor-pointer rounded-[8px]! border border-[#EFF1F6]',
                             item.span === 3 || item.span === 2
@@ -155,10 +164,14 @@
                               />
                             </div>
                             <div class="flex-1 min-w-0">
-                              <h4 class="text-sm md:text-base font-semibold text-gray-900 mb-1 md:mb-2">
+                              <h4
+                                class="text-sm md:text-base font-semibold text-gray-900 mb-1 md:mb-2"
+                              >
                                 {{ item.title }}
                               </h4>
-                              <p class="text-xs md:text-sm text-gray-600 line-clamp-2">
+                              <p
+                                class="text-xs md:text-sm text-gray-600 line-clamp-2"
+                              >
                                 {{ item.description }}
                               </p>
                             </div>
@@ -339,6 +352,14 @@ const shouldShowSectionTitle = computed(() => {
   const nonRelational = currentContent.value.nonRelational || [];
   return relational.length > 0 && nonRelational.length > 0;
 });
+
+// 打开文档链接
+const openDocLink = () => {
+  window.open(
+    "https://www.func.xin/docs/category/dmdrs-%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C",
+    "_blank"
+  );
+};
 </script>
 
 <style scoped>
