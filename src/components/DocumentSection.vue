@@ -1,6 +1,6 @@
 <template>
   <section class="py-8 md:py-16 bg-gray-50">
-    <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
+    <div class="w-full max-w-[1440px] px-6 md:px-0 mx-auto">
       <div class="text-center mb-8 md:mb-12">
         <h2
           class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[24px]"
@@ -61,7 +61,7 @@
           </div>
 
           <!-- 右侧内容区 -->
-          <div class="flex-1 p-4 md:p-8 bg-transparent">
+          <div class="flex-1 p-0 md:p-8 bg-transparent">
             <transition name="fade" mode="out-in">
               <div :key="activeKey">
                 <!-- 自定义分类布局（用于大数据、人工智能） -->
@@ -111,7 +111,7 @@
                               {{ item.title }}
                             </h4>
                             <p
-                              class="text-xs md:text-sm text-gray-600 line-clamp-2"
+                              class="text-base md:text-base text-gray-600 line-clamp-2"
                             >
                               {{ item.description }}
                             </p>
@@ -178,7 +178,7 @@
                                 {{ item.title }}
                               </h4>
                               <p
-                                class="text-xs md:text-sm text-gray-600 line-clamp-2"
+                                class="text-xs md:text-base text-gray-600 line-clamp-2"
                               >
                                 {{ item.description }}
                               </p>

@@ -1,6 +1,6 @@
 <template>
   <section class="py-8 md:py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="max-w-[1440px] px-6 md:px-0 mx-auto">
       <div class="text-center mb-8 md:mb-12">
         <h2
           class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[24px]"
@@ -19,7 +19,7 @@
             <img :src="jsIcon" alt="技术博客" class="w-4 h-4 md:w-5 md:h-5" />
             <h3 class="text-lg md:text-xl font-bold text-gray-900">技术博客</h3>
           </div>
-          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm">
+          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-base">
             深度解析DM8核心技术原理，实践案例与技术干货定期更新
           </p>
           <a
@@ -44,7 +44,7 @@
             <img :src="jxIcon" alt="教学视频" class="w-4 h-4 md:w-5 md:h-5" />
             <h3 class="text-lg md:text-xl font-bold text-gray-900">教学视频</h3>
           </div>
-          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm">
+          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-base">
             通过可视化教程快速掌握DM8安装部署、操作维护与开发技巧
           </p>
           <a
@@ -69,7 +69,7 @@
             <img :src="sqIcon" alt="社区支持" class="w-4 h-4 md:w-5 md:h-5" />
             <h3 class="text-lg md:text-xl font-bold text-gray-900">社区支持</h3>
           </div>
-          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-sm">
+          <p class="text-gray-600 mb-4 md:mb-6 leading-relaxed text-base">
             加入开发者社区获取技术支持，与其他开发者交流经验与解决方案
           </p>
           <a

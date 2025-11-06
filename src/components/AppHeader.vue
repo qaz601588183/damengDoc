@@ -37,7 +37,7 @@
               v-if="item.categories && item.categories.length > 0"
               class="dropdown-menu"
             >
-              <div class="max-w-7xl mx-auto px-9 py-6 flex gap-8">
+              <div class="max-w-[1440px] px-6 md:px-0 mx-auto py-6 flex gap-8">
                 <!-- 左侧分类导航 -->
                 <div class="w-48 shrink-0">
                   <div
