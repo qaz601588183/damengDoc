@@ -3,7 +3,7 @@
     <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
       <div class="text-center mb-8 md:mb-12">
         <h2
-          class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[20px]"
+          class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[24px]"
         >
           文档导航
         </h2>
@@ -26,7 +26,7 @@
               ]"
             >
               <component :is="tab.icon" class="shrink-0 w-4 h-4" />
-              <span class="font-medium text-sm">{{ tab.label }}</span>
+              <span class="font-medium text-base">{{ tab.label }}</span>
             </div>
           </div>
         </div>
@@ -47,7 +47,15 @@
                 ]"
               >
                 <component :is="tab.icon" class="shrink-0 w-5 h-5" />
-                <span class="font-medium">{{ tab.label }}</span>
+                <span
+                  :class="[
+                    'font-normal text-xl ml-1',
+                    activeKey === tab.name
+                      ? 'text-[#0053D2] font-bold!'
+                      : 'text-gray-700',
+                  ]"
+                  >{{ tab.label }}</span
+                >
               </div>
             </div>
           </div>
@@ -68,7 +76,7 @@
                     "
                   >
                     <h3
-                      class="text-sm md:text-base font-semibold text-gray-900 mb-3"
+                      class="text-sm md:text-xl font-semibold text-gray-900 mb-3"
                     >
                       {{ section.title }}
                     </h3>
@@ -133,7 +141,7 @@
                     >
                       <h3
                         v-if="shouldShowSectionTitle"
-                        class="text-sm md:text-base font-semibold text-gray-900 mb-3"
+                        class="text-sm md:text-xl font-semibold text-gray-900 mb-3"
                       >
                         {{ section.title }}
                       </h3>

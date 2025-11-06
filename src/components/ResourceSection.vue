@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="text-center mb-8 md:mb-12">
         <h2
-          class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[20px]"
+          class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[24px]"
         >
           更多资源
         </h2>
