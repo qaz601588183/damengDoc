@@ -29,7 +29,7 @@
             >
               快速入门
             </h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed">
               30分钟内掌握DM8核心功能,立即体验分布式数据库的强大性能
             </p>
           </div>
@@ -53,7 +53,7 @@
             >
               云上部署
             </h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed">
               详细指导如何在主流云平台部署达梦数据库服务,快速搭建分布式架构
             </p>
           </div>
@@ -77,7 +77,7 @@
             >
               开发者工具包
             </h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed">
               获取 SDK/CLI等开发工具,简化DM8应用开发与运维流程
             </p>
           </div>
