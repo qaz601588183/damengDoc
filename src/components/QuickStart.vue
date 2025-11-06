@@ -3,8 +3,7 @@
     <div class="w-full max-w-7xl mx-auto px-4 md:px-6">
       <div class="text-center mb-8 md:mb-12">
         <h2
-          class="text-lg md:text-xl font-bold text-gray-900 mb-4"
-          style="font-size: 18px; md:font-size: 20px"
+          class="text-lg md:text-xl font-bold text-gray-900 mb-4 text-[18px] md:text-[20px]"
         >
           快速上手
         </h2>
@@ -25,7 +24,11 @@
                 class="w-full h-full object-contain"
               />
             </div>
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">快速入门</h3>
+            <h3
+              class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3"
+            >
+              快速入门
+            </h3>
             <p class="text-gray-600 text-sm leading-relaxed">
               30分钟内掌握DM8核心功能,立即体验分布式数据库的强大性能
             </p>
@@ -45,7 +48,11 @@
                 class="w-full h-full object-contain"
               />
             </div>
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">云上部署</h3>
+            <h3
+              class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3"
+            >
+              云上部署
+            </h3>
             <p class="text-gray-600 text-sm leading-relaxed">
               详细指导如何在主流云平台部署达梦数据库服务,快速搭建分布式架构
             </p>
@@ -65,7 +72,9 @@
                 class="w-full h-full object-contain"
               />
             </div>
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">
+            <h3
+              class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3"
+            >
               开发者工具包
             </h3>
             <p class="text-gray-600 text-sm leading-relaxed">
